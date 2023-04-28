@@ -79,5 +79,44 @@
 
 .label {
   display: inline-block;
-  width: 100px;
+  width: 120px;
+}
+
+.job-details-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.job-details-input-container {
+  display: flex;
+  flex-direction: column;
+}
+.add-details-icon {
+  position: relative;
+  top: 3px;
+  left: 5px;
+}
+
+.datePicker {
+  width: 180px !important;
+}
+
+.school-details-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.school-details-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.other-details-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.other-details-input-container {
+  display: flex;
+  flex-direction: column;
 }

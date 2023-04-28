@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <div className="header">
-      <span>CV Creator</span>
+      <span>Resume Creator</span>
     </div>
   );
 };
