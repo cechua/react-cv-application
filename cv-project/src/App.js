@@ -20,13 +20,6 @@ function App() {
         endDate: "",
         jobDetails: [""],
       },
-      {
-        company: "Fake Company 2",
-        position: "Front End Developer",
-        startDate: "",
-        endDate: "",
-        jobDetails: [""],
-      },
     ],
     educationBackground: [
       {
