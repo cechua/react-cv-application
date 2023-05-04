@@ -16,17 +16,21 @@ function App() {
       {
         company: "Fake Company 1",
         position: "Front End Developer",
-        startDate: "",
-        endDate: "",
+        startDate: "05/04/2023",
+        endDate: "05/04/2027",
         jobDetails: [""],
       },
     ],
     educationBackground: [
       {
         school: "Fake School",
-        startYear: "",
-        endYear: "",
-        schoolDetails: ["testtehe"],
+        startYear: "05/04/2021",
+        endYear: "01/02/2024",
+        schoolDetails: [
+          "Major in Information Technology",
+          "Scholarship recipient",
+          "Dean lister S.Y. 2022-2023 1st Semester",
+        ],
       },
     ],
     others: [""],

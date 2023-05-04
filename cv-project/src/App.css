@@ -177,3 +177,60 @@ input {
   border-radius: 3px;
   cursor: pointer;
 }
+
+/* Preview Container CSS */
+
+.preview-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.preview-box {
+  border: 1px solid #ccc;
+  padding: 25px;
+}
+
+.preview-name {
+  font-size: 36px;
+}
+
+.preview-contactInformations {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.preview-label {
+  text-decoration: underline;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.preview-school {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  margin-top: 5px;
+}
+
+.preview-work {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-work-company,
+.preview-education-school {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 0px;
+}
+
+.preview-work-position {
+  font-style: italic;
+  margin-bottom: 10px;
+}

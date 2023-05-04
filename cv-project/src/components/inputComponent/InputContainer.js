@@ -45,12 +45,12 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
         educBG[index].school = value;
         setPreviewValues({ ...previewValues, educationBackground: educBG });
         break;
-      case "startDate":
-        educBG[index].startDate = value;
+      case "startYear":
+        educBG[index].startYear = value;
         setPreviewValues({ ...previewValues, educationBackground: educBG });
         break;
-      case "endDate":
-        educBG[index].endDate = value;
+      case "endYear":
+        educBG[index].endYear = value;
         setPreviewValues({ ...previewValues, educationBackground: educBG });
         break;
       default:
@@ -213,7 +213,8 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
             <div>
               <label className="label">Start Date: </label>
               <DatePicker
-                selected={exp.startDate}
+                // @ts-ignore
+                selected={exp.startDate ? new Date(exp.startDate) : ""}
                 onChange={(date) =>
                   handleExperienceChanges("startDate", expIndex, date)
                 }
@@ -225,12 +226,17 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
               <div>
                 <label className="label">End Date: </label>
                 <DatePicker
-                  selected={exp.endDate === "Present" ? "" : exp.endDate}
+                  // @ts-ignore
+                  selected={
+                    exp.endDate == null || exp.endDate === ""
+                      ? ""
+                      : new Date(exp.endDate)
+                  }
                   onChange={(date) =>
                     handleExperienceChanges("endDate", expIndex, date)
                   }
                   dateFormat={"MM/dd/yyyy"}
-                  disabled={exp.endDate === "Present"}
+                  disabled={exp.endDate === null}
                   wrapperClassName="datePicker"
                 />
               </div>
@@ -242,7 +248,7 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
                     handleExperienceChanges(
                       "endDate",
                       expIndex,
-                      e.target.checked ? "Present" : ""
+                      e.target.checked ? null : ""
                     )
                   }
                 />
@@ -311,9 +317,12 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
             <div>
               <label className="label">Start Date: </label>
               <DatePicker
-                selected={education.startDate || ""}
+                // @ts-ignore
+                selected={
+                  education.startYear ? new Date(education.startYear) : ""
+                }
                 onChange={(date) =>
-                  handleEducationChanges("startDate", educationIndex, date)
+                  handleEducationChanges("startYear", educationIndex, date)
                 }
                 dateFormat={"yyyy"}
                 showYearPicker
@@ -323,9 +332,10 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
             <div>
               <label className="label">End Date: </label>
               <DatePicker
-                selected={education.endDate || ""}
+                // @ts-ignore
+                selected={education.endYear ? new Date(education.endYear) : ""}
                 onChange={(date) =>
-                  handleEducationChanges("endDate", educationIndex, date)
+                  handleEducationChanges("endYear", educationIndex, date)
                 }
                 dateFormat={"yyyy"}
                 showYearPicker
