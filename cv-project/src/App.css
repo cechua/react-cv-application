@@ -186,11 +186,15 @@ input {
   flex-direction: column;
   padding: 30px;
   margin-bottom: 40px;
+  gap: 10px;
 }
 
 .preview-box {
   border: 1px solid #ccc;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .preview-name {
