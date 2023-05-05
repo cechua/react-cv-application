@@ -1,6 +1,7 @@
 import React from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import DatePicker from "react-datepicker";
+import InputField from "./inputField";
 
 const InputContainer = ({ previewValues, setPreviewValues }) => {
   const {
@@ -140,51 +141,41 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
         <div className="category-label-box">
           <label className="category-label">Personal Information</label>
         </div>
-        <div>
-          <label className="label">First Name: </label>
-          <input
-            value={firstName || ""}
-            onChange={(e) =>
-              setPreviewValues({ ...previewValues, firstName: e.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label className="label">Last Name: </label>
-          <input
-            value={lastName || ""}
-            onChange={(e) =>
-              setPreviewValues({ ...previewValues, lastName: e.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label className="label">Contact No: </label>
-          <input
-            value={contact || ""}
-            onChange={(e) =>
-              setPreviewValues({ ...previewValues, contact: e.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label className="label">Email: </label>
-          <input
-            value={email || ""}
-            onChange={(e) =>
-              setPreviewValues({ ...previewValues, email: e.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label className="label">Address: </label>
-          <input
-            value={address || ""}
-            onChange={(e) =>
-              setPreviewValues({ ...previewValues, address: e.target.value })
-            }
-          />
-        </div>
+        <InputField
+          label="First Name: "
+          inputValue={firstName || ""}
+          onChange={(e) =>
+            setPreviewValues({ ...previewValues, firstName: e.target.value })
+          }
+        />
+        <InputField
+          label="Last Name: "
+          inputValue={lastName || ""}
+          onChange={(e) =>
+            setPreviewValues({ ...previewValues, lastName: e.target.value })
+          }
+        />
+        <InputField
+          label="Contact No: "
+          inputValue={contact || ""}
+          onChange={(e) =>
+            setPreviewValues({ ...previewValues, contact: e.target.value })
+          }
+        />
+        <InputField
+          label="Email: "
+          inputValue={email || ""}
+          onChange={(e) =>
+            setPreviewValues({ ...previewValues, email: e.target.value })
+          }
+        />
+        <InputField
+          label="Address: "
+          inputValue={address || ""}
+          onChange={(e) =>
+            setPreviewValues({ ...previewValues, address: e.target.value })
+          }
+        />
       </div>
       <div className="category-container">
         <div className="category-label-box">
@@ -192,24 +183,20 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
         </div>
         {experience?.map((exp, expIndex) => (
           <div className="details-container" key={expIndex}>
-            <div>
-              <label className="label">Company: </label>
-              <input
-                value={exp.company || ""}
-                onChange={(e) =>
-                  handleExperienceChanges("company", expIndex, e.target.value)
-                }
-              />
-            </div>
-            <div>
-              <label className="label">Position: </label>
-              <input
-                value={exp.position || ""}
-                onChange={(e) =>
-                  handleExperienceChanges("position", expIndex, e.target.value)
-                }
-              />
-            </div>
+            <InputField
+              label="Company: "
+              inputValue={exp.company || ""}
+              onChange={(e) =>
+                handleExperienceChanges("company", expIndex, e.target.value)
+              }
+            />
+            <InputField
+              label="Position: "
+              inputValue={exp.position || ""}
+              onChange={(e) =>
+                handleExperienceChanges("position", expIndex, e.target.value)
+              }
+            />
             <div>
               <label className="label">Start Date: </label>
               <DatePicker
@@ -301,19 +288,13 @@ const InputContainer = ({ previewValues, setPreviewValues }) => {
         </div>
         {educationBackground?.map((education, educationIndex) => (
           <div key={educationIndex} className="details-container">
-            <div>
-              <label className="label">School Name: </label>
-              <input
-                value={education.school || ""}
-                onChange={(e) =>
-                  handleEducationChanges(
-                    "school",
-                    educationIndex,
-                    e.target.value
-                  )
-                }
-              />
-            </div>
+            <InputField
+              label="School Name: "
+              inputValue={education.school || ""}
+              onChange={(e) =>
+                handleEducationChanges("school", educationIndex, e.target.value)
+              }
+            />
             <div>
               <label className="label">Start Date: </label>
               <DatePicker
